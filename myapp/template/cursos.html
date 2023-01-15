@@ -1,0 +1,13 @@
+{% extends "bienvenida.html" %}
+
+{% block contenido %}
+<h1>Lista de Cursos</h1>
+<a href="{%  url 'crear_curso' %}"> Añadir curso</a>
+<br>
+<ul>
+{% for curso in cursos %}
+    <li>{{ cursos.nombre }}, {{ cursos.grado }}</li>
+{% endfor %}
+</ul>
+{% endblock contenido %}
+  

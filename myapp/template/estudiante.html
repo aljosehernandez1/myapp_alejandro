@@ -1,0 +1,10 @@
+{% extends "bienvenida.html" %}
+
+{% block contenido %}
+<h1>Lista de Estudiantes</h1>
+<ul>
+{% for student in appcoder %}
+    <li>{{ student.apellido }}, {{student.nombre}}</li>
+{%endfor%}
+</ul>
+{% endblock contenido%}

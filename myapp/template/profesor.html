@@ -1,0 +1,10 @@
+{% extends "bienvenida.html" %}
+
+{% block contenido %}
+<h1>Lista de Profesores</h1>
+<ul>
+{% for profesor in profesor %}
+    <li>{{ profesor.apellido }}, {{profesor.nombre}}</li>
+{%endfor%}
+</ul>
+{% endblock contenido%}

@@ -1,0 +1,12 @@
+body{
+    background-color: rgb(1, 37, 37);
+    color:rgb(255, 136, 0);
+}     
+h1{
+    text-align: center;
+
+}
+
+img{
+    max-width: 100%;
+}

@@ -1,0 +1,10 @@
+{% extends "bienvenida.html" %}
+
+{% block contenido %}
+<h1>Lista de Trabajos </h1>
+<ul>
+{% for trabajos in trabajos %}
+    <li>{{ trabajo.nombre }}, {{trabajo.entregado}}</li>
+{%endfor%}
+</ul>
+{% endblock contenido%}

@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html> lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" /> 
+
+</head>
+<body>
+    <h1> Bienvenidos proyectos de alejandro</h1>
+    <form action="http://127.0.0.1:8000/acerca/">
+        <button type="submit">Acerca</button>
+      </form>
+    <nav class="navbar navbar-ligt bg-light static-top">
+        <div class="container">
+            <a class="=navbar-brand" href="{% url 'listar_cursos' %}">Curso</a>
+            <a class="=navbar-brand" href="{% url 'listar_estudiantes' %}">Estudiantes</a>
+            <a class="=navbar-brand" href="{% url 'listar_profesores' %}">Profesor</a>
+            <a class="=navbar-brand" href="{% url 'listar_trabajos' %}">Trabajo</a>
+    </nav>
+    <section style="padding:90px 50px">
+        {% block contenido %}
+        {% endblock contenido %}
+    </section>
+    </ul>
+    <section>
+        {% for elemento in articulos %}
+            <article>
+                <h3>{{ elemento.nombre }}</h3>
+                <p>
+                    {{ elemento.contenido }}
+                </p>
+                <img src="{{ elemento.imagen}}">
+                <footer>
+                  Autor:  {{ elemento.autor }}
+                </footer>
+            </article>
+        {% endfor %}
+    </section>
+    <section>
+        <form action="" method="post">
+            <h2> Comunicate conmigo </h2>
+            {% csrf_token %}
+            <input type="text" name="nombre"> <br>
+            <textarea name="mensaje">
+
+            </textarea> <br>
+            <input type="submit" name="enviar" value=" Enviar comentario">
+            {% if mensaje %}
+            <h2>{{ mensaje }}</h2>
+            {% endif %}
+        </form>
+    </section>
+    <script src="{% static 'appcoder/js/script.js' %></script">
+
+    </script>
+</body>
+</html>
+
